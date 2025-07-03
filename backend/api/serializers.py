@@ -8,4 +8,4 @@ class WeatherSerializer(serializers.Serializer):
 class MarsPhotoSerializer(serializers.Serializer):
     img_src = serializers.URLField()
     earth_date = serializers.CharField()
-    rover_name = serializers.CharField()
+    rover_name = serializers.CharField(source='rover.name')  # Access nested rover.name
