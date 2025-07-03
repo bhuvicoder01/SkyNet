@@ -30,7 +30,7 @@ const WeatherDisplay: React.FC = () => {
       {weather && (
         <div>
           <h3>{weather.city}</h3>
-          <p>Temperature: {weather.temperature}°K</p>
+          <p>Temperature: {weather.temperature}°K 😶‍🌫️</p>
           <p>Description: {weather.description}</p>
         </div>
       )}
