@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+from dotenv import load_dotenv
+import os
+load_dotenv()
+WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
+NASA_API_KEY = os.getenv("NASA_API_KEY")
 
 # Application definition
 
@@ -37,7 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'api',
+    'rest_framework'
+
 ]
+INSTALLED_APPS += ["corsheaders"]
+MIDDLEWARE = ["corsheaders.middleware.CorsMiddleware", ...]
+CORS_ALLOW_ALL_ORIGINS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

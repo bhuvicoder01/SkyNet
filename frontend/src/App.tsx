@@ -1,32 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import WeatherDisplay from './components/WeatherDisplay';
+import MarsGallery from "./components/MarsGallery";
+import { Container, Typography } from "@mui/material";
 
-function App() {
-
-  const arr=[10,20,30];
-
-  const func=arr.map(num=>num*2);
- 
-  const task=['one','two','three'];
-
+const App: React.FC = () => {
   return (
-    <>
+    <Container>
+      <Typography variant="h1">Mars.JPG</Typography>
+      <WeatherDisplay />
+      <MarsGallery />
+    </Container>
+  );
+};
 
-
-    <div>
-      <ol>
-      {task.map((task,index:number)=>
-      (
-        <li  key={index}>{task}</li>
-      ))}
-      </ol>
-    </div>
-    
-      
-    </>
-  )
-}
-
-export default App
+export default App;
