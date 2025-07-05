@@ -12,4 +12,4 @@ python-dotenv
 requests                     
 sqlparse                      
 tzdata                       
-urllib3                       
+urllib3                       "gunicorn==20.1.0" 

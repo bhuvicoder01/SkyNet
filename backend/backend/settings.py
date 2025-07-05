@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$%54+9721u%1=urc&-051olx%d@4u-=g9vaeh(@94hul70y)&8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['https://skynet-b4uw.onrender.com','*']
 
@@ -149,4 +149,4 @@ EMAIL_HOST_PASSWORD = 'avce kkdb ywib jgsk'
 DEFAULT_FROM_EMAIL = 'Kushankrawat07@gmail.com'
 FRONTEND_URL = 'http://localhost:8081'
 
-PORT = int(os.getenv("PORT", 10000))  # Default to 8000 if PORT is not set
+PORT = int(os.getenv("PORT", 8000))  # Default to 8000 if PORT is not set
