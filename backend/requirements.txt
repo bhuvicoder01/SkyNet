@@ -3,4 +3,4 @@ djangorestframework
 djangorestframework_simplejwt
 uuid
 python-dotenv
-corsheader
+corsheaders
