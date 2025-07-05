@@ -33,6 +33,8 @@ load_dotenv()
 WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
 NASA_API_KEY = os.getenv("NASA_API_KEY")
 
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -146,3 +148,5 @@ EMAIL_HOST_USER = 'Kushankrawat07@gmail.com'
 EMAIL_HOST_PASSWORD = 'avce kkdb ywib jgsk'
 DEFAULT_FROM_EMAIL = 'Kushankrawat07@gmail.com'
 FRONTEND_URL = 'http://localhost:8081'
+
+PORT = int(os.getenv("PORT", 8000))  # Default to 8000 if PORT is not set
