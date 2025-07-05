@@ -1,7 +1,9 @@
 
 import axios from "axios";
 
-const API_URL = import.meta.env.backend_url ||"http://127.0.0.1:8000/api";
+const API_URL = "https://skynet-b4uw.onrender.com/api";
+
+console.log("backend url:",API_URL);
 
 export interface WeatherData {
   city: string;
