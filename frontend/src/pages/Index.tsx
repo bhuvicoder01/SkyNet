@@ -61,19 +61,7 @@ const Index = () => {
                 </Link>
               </div>
               
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
-                  <div className="flex -space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <div key={i} className="w-6 h-6 bg-yellow-400 rounded-full border-2 border-background text-xs flex items-center justify-center">
-                        ★
-                      </div>
-                    ))}
-                  </div>
-                  <span className="text-sm font-medium">(5.0)</span>
-                </div>
-                <span className="text-sm text-muted-foreground">Space Explorer Reviews</span>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -121,9 +109,9 @@ const Index = () => {
                 <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-400 to-pink-600 rounded-full flex items-center justify-center">
                   <span className="text-2xl">🛰️</span>
                 </div>
-                <h3 className="text-xl font-bold">Deep Space Communication</h3>
+                <h3 className="text-xl font-bold">Mars Surface Exploration</h3>
                 <p className="text-muted-foreground">
-                  Advanced communication systems to stay connected across the vast distances of space exploration.
+                  Advanced communication systems to fetch images across the vast distances of space exploration.
                 </p>
               </CardContent>
             </Card>
