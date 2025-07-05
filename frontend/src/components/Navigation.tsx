@@ -44,12 +44,15 @@ const Navigation = () => {
             <div className="px-6 lg:px-8">
               <div className="flex justify-between items-center h-16">
                 {/* Logo */}
-                <Link to="/" className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-red-500 rounded transform rotate-12"></div>
-                  <span className="text-xl font-bold bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+                <Link to={"/"}>
+                <img
+                  src="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪐</text></svg>" type="image/svg+xml"
+                  alt="SkyNet Logo"
+                  className="w-8 h-8 rounded object-cover"
+                /> </Link> <span className="text-xl font-bold bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                     SkyNet
                   </span>
-                </Link>
+                
 
                 {/* Navigation Links */}
                 <div className="hidden md:flex items-center space-x-8">
