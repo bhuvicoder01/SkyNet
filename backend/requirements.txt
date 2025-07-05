@@ -2,3 +2,4 @@ django
 djangorestframework
 djangorestframework_simplejwt
 uuid
+python-dotenv
