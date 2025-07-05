@@ -40,7 +40,7 @@ const Navigation = () => {
                 <Link to="/" className="flex items-center space-x-2">
                   <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-red-500 rounded transform rotate-12"></div>
                   <span className="text-xl font-bold bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-                    MarsScope
+                    SkyNet
                   </span>
                 </Link>
 
