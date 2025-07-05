@@ -5,8 +5,14 @@ import type { WeatherData } from "../services/api";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { useAuth } from "@/contexts/AuthContext";
+import { Link } from "react-router-dom";
+import { Lock } from "lucide-react";
+import Navigation from "./Navigation";
 
 const WeatherDisplay: React.FC = () => {
+  const { isAuthenticated, isLoading } = useAuth();
   const [location, setLocation] = useState("");
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [error, setError] = useState("");
@@ -34,9 +40,63 @@ const WeatherDisplay: React.FC = () => {
     }
   };
 
-  return (
+  if (isLoading) {
+    return (
+      <div className="min-h-screen pt-20 px-4">
+        <Navigation/>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center">
+            <p className="text-xl text-muted-foreground">Loading...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen pt-20 px-4">
+        <Navigation/>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent mb-4">
+              Earth Weather Monitor
+            </h1>
+            <p className="text-xl text-muted-foreground">
+              Check weather conditions on Earth from your Mars mission control
+            </p>
+          </div>
+
+          <Alert className="bg-destructive/10 border-destructive/20 mb-8">
+            <Lock className="h-4 w-4" />
+            <AlertDescription className="text-destructive">
+              Authentication required to access weather data. Please{" "}
+              <Link to="/login" className="underline font-medium hover:text-destructive/80">
+                sign in
+              </Link>{" "}
+              or{" "}
+              <Link to="/signup" className="underline font-medium hover:text-destructive/80">
+                create an account
+              </Link>{" "}
+              to continue your space mission.
+            </AlertDescription>
+          </Alert>
+
+          <Card className="bg-card/50 backdrop-blur-sm border-border/50">
+            <CardContent className="pt-8 pb-8">
+              <p className="text-center text-muted-foreground text-lg">
+                Mission control access restricted. Astronaut credentials required.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    );
+  }
+
+  return (
     <div className="min-h-screen pt-20 px-4">
+      <Navigation/>
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent mb-4">
@@ -56,7 +116,7 @@ const WeatherDisplay: React.FC = () => {
               <Input
                 type="text"
                 value={location}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setLocation(e.target.value)}
+                onChange={(e) => setLocation(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Enter city name..."
                 className="flex-1 bg-input border-border/50"
