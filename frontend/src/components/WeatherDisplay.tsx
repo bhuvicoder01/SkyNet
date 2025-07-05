@@ -5,7 +5,6 @@ import type { WeatherData } from "../services/api";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Navigation from "./Navigation";
 
 const WeatherDisplay: React.FC = () => {
   const [location, setLocation] = useState("");
@@ -38,7 +37,6 @@ const WeatherDisplay: React.FC = () => {
   return (
 
     <div className="min-h-screen pt-20 px-4">
-      <Navigation/>
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent mb-4">

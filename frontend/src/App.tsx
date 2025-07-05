@@ -8,15 +8,18 @@ import Index from "./pages/Index";
 import WeatherDisplay from "./components/WeatherDisplay";
 import MarsGallery from "./components/MarsGallery";
 import NotFound from "./pages/NotFound";
+import Navigation from "./components/Navigation";
 
 const queryClient = new QueryClient();
 
 const App = () => (
+  
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
+       <Navigation/>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/weather" element={<WeatherDisplay />} />
