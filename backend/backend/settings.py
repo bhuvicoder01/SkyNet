@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$%54+9721u%1=urc&-051olx%d@4u-=g9vaeh(@94hul70y)&8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://skynet-b4uw.onrender.com','*']
 
 from dotenv import load_dotenv
 import os
