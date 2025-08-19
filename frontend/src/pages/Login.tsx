@@ -60,25 +60,25 @@ const Login = () => {
             )}
 
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="username">Username</Label>
               <div className="relative">
                 <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
-                  id="email"
-                  type="email"
-                  placeholder="Enter your email"
+                  id="username"
+                  type="text"
+                  placeholder="Enter your username"
                   className="pl-10"
-                  {...register('email', {
-                    required: 'Email is required',
+                  {...register('username', {
+                    required: 'username is required',
                     pattern: {
-                      value: /\S+@\S+\.\S+/,
-                      message: 'Please enter a valid email'
+                      value: /\S+/,
+                      message: 'Please enter a valid username'
                     }
                   })}
                 />
               </div>
-              {errors.email && (
-                <p className="text-sm text-destructive">{errors.email.message}</p>
+              {errors.username && (
+                <p className="text-sm text-destructive">{errors.username.message}</p>
               )}
             </div>
 

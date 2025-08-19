@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://skynet-b4uw.onrender.com/api/:path*"
+    },
+    {
+      "source": "/:any*",
+      "destination": "/"
+    }
+  ]
+}
